@@ -24,7 +24,7 @@ public class PortfolioController {
         profile.put("name", "花千树");
         profile.put("englishName", "SakuraLoop");
         profile.put("role", "Java 后端工程师 / 独立开发者");
-        profile.put("location", "杭州 · 中国");
+        profile.put("location", "武汉 · 中国");
         profile.put("intro", "我把复杂的业务，做成安静、可靠、值得依赖的产品。");
         profile.put("available", true);
         return profile;
@@ -34,8 +34,8 @@ public class PortfolioController {
     public List<Map<String, String>> stats() {
         return Arrays.asList(
                 stat("01", "专注方向", "后端架构"),
-                stat("05", "工作年限", "年"),
-                stat("24", "交付项目", "个"),
+                stat("01", "工作年限", "年"),
+                stat("4", "交付项目", "个"),
                 stat("∞", "保持好奇", "每天")
         );
     }
@@ -52,9 +52,9 @@ public class PortfolioController {
     @GetMapping("/timeline")
     public List<Map<String, String>> timeline() {
         return Arrays.asList(
-                event("2024 — 现在", "独立开发 · 杭州", "把时间花在真正重要的产品细节上。"),
-                event("2021 — 2024", "后端工程师 · 云舟科技", "参与交易、内容与数据平台的服务化建设。"),
-                event("2020 — 2021", "开始写代码", "从一个 Spring Boot 接口开始，慢慢走到今天。")
+                event("2026 — 现在", "独立开发 · 杭州", "把时间花在真正重要的产品细节上。"),
+                event("2026 — 现在", "后端工程师 · TCL格创东智", "参与集团生产系统平台的服务化建设及运维支持。"),
+                event("2021 — 2025", "开始写代码", "从一个 Spring Boot 接口开始，慢慢走到今天。")
         );
     }
 
