@@ -21,7 +21,8 @@ public class PortfolioController {
     @GetMapping("/profile")
     public Map<String, Object> profile() {
         Map<String, Object> profile = new LinkedHashMap<String, Object>();
-        profile.put("name", "林野");
+        profile.put("name", "花千树");
+        profile.put("englishName", "SakuraLoop");
         profile.put("role", "Java 后端工程师 / 独立开发者");
         profile.put("location", "杭州 · 中国");
         profile.put("intro", "我把复杂的业务，做成安静、可靠、值得依赖的产品。");
