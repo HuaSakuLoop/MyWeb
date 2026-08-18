@@ -80,3 +80,34 @@ h1 em, h2 em { color: #91b625; font-style: normal; font-family: Georgia, 'Noto S
 .reveal { opacity: 0; transform: translateY(18px); transition: opacity .8s ease, transform .8s ease; }.reveal.is-visible { opacity: 1; transform: translateY(0); }.delay-1 { transition-delay: .12s; }.delay-2 { transition-delay: .22s; }
 @media (max-width: 800px) { .container { width: min(100% - 40px, 600px); }.nav { height: 68px; }.nav-links { position: absolute; top: 68px; left: 0; right: 0; display: none; flex-direction: column; gap: 0; margin: 0; padding: 12px 20px 20px; background: var(--paper); border-bottom: 1px solid var(--line); }.nav-links.open { display: flex; }.nav-links a { padding: 9px 0; }.menu-btn { display: block; }.nav-cta { padding: 8px 12px; }.hero { min-height: 770px; padding-top: 80px; }.hero-art { width: 87vw; height: 87vw; right: -20%; top: 46%; opacity: .9; }.hero-scroll { bottom: 20px; }.statement, .journey-section { grid-template-columns: 1fr; gap: 32px; }.stats-grid { grid-template-columns: repeat(2, 1fr); }.stat, .stat:not(:first-child) { padding: 20px 15px 20px 0; border-bottom: 1px solid var(--line); }.stat:nth-child(even) { border-right: 0; padding-left: 15px; }.stat strong { font-size: 37px; }.projects-grid { grid-template-columns: 1fr; }.project-large { grid-row: auto; }.project-visual, .project-large .project-visual { height: 390px; }.thinking-layout { grid-template-columns: 1fr; gap: 25px; }.contact-card { grid-template-columns: 1fr; gap: 45px; padding: 38px 25px; }.footer { align-items: start; flex-direction: column; gap: 10px; padding-bottom: 25px; } }
 @media (max-width: 430px) { .nav-cta { display: none; }.eyebrow .cn { display: none; }.hero h1 { font-size: 65px; }.project-meta { display: block; }.project-tags { justify-content: start; margin-top: 12px; }.note-paper b { font-size: 23px; }.contact-links { flex-direction: column; gap: 12px; align-items: start; } }
+
+/* Apple Design refinements: immediate feedback, restrained depth, and accessible motion. */
+body { font-optical-sizing: auto; text-rendering: optimizeLegibility; }
+button, a { -webkit-tap-highlight-color: transparent; }
+a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visible { outline: 2px solid #8bab20; outline-offset: 4px; }
+.button:active, .nav-cta:active, .filter:active, .icon-btn:active, .menu-btn:active { transform: scale(.96); transition-duration: 100ms; }
+.nav-wrap { backdrop-filter: blur(18px) saturate(150%); box-shadow: 0 5px 22px rgba(30, 35, 24, .025); }
+.project-card { transition: transform .34s cubic-bezier(.22, 1, .36, 1); will-change: transform; }
+.project-card:hover { transform: translateY(-4px); }
+.project-visual:after { content: ''; position: absolute; inset: 0; pointer-events: none; background: linear-gradient(140deg, rgba(255,255,255,.16), transparent 38%); opacity: 0; transition: opacity .34s ease; }
+.project-card:hover .project-visual:after { opacity: 1; }
+
+@media (max-width: 800px) {
+    .nav-links { display: flex; opacity: 0; visibility: hidden; pointer-events: none; transform: translateY(-8px) scale(.985); transform-origin: top center; background: color-mix(in srgb, var(--paper) 94%, transparent); backdrop-filter: blur(18px) saturate(150%); transition: opacity .24s ease, transform .32s cubic-bezier(.22, 1, .36, 1), visibility .24s; }
+    .nav-links.open { display: flex; opacity: 1; visibility: visible; pointer-events: auto; transform: translateY(0) scale(1); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    .reveal { opacity: 1; transform: none; transition: none; }
+    .project-card, .project-visual:after, .nav-links, body { transition: none; }
+    .project-card:hover { transform: none; }
+}
+@media (prefers-reduced-transparency: reduce) {
+    .nav-wrap, .nav-links { background: var(--paper); backdrop-filter: none; }
+}
+@media (prefers-contrast: more) {
+    .nav-wrap { background: var(--paper); border-bottom: 2px solid var(--ink); }
+    .filter, .project-tags span { border-color: var(--ink); }
+    .hero-lede, .statement p, .section-heading p, .project-meta p, .principle p, .timeline-item p { color: var(--ink); }
+}

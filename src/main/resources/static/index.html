@@ -22,7 +22,7 @@
                 <a href="#contact">联系</a>
             </div>
             <div class="nav-actions">
-                <button class="icon-btn theme-toggle" type="button" aria-label="切换深色模式"><span class="sun-icon">☼</span></button>
+                <button class="icon-btn theme-toggle" type="button" aria-label="切换深色模式" aria-pressed="false"><span class="sun-icon">☼</span></button>
                 <button class="menu-btn" type="button" aria-label="打开菜单" aria-expanded="false"><span></span><span></span></button>
                 <a class="nav-cta" href="#contact">一起聊聊 <span>↗</span></a>
             </div>
@@ -71,10 +71,10 @@
         <section class="work-section section-space container" id="work">
             <div class="section-heading reveal"><div class="section-kicker">02 — SELECTED WORK</div><h2>一些认真做过的事<span class="heading-period">。</span></h2><p>每一个项目，都是一次把想法落地的练习。</p></div>
             <div class="filter-row reveal delay-1" role="tablist" aria-label="作品筛选">
-                <button class="filter active" data-filter="all" role="tab">全部 <span>03</span></button>
-                <button class="filter" data-filter="commerce" role="tab">产品体验</button>
-                <button class="filter" data-filter="data" role="tab">数据系统</button>
-                <button class="filter" data-filter="product" role="tab">个人实验</button>
+                <button class="filter active" data-filter="all" role="tab" aria-selected="true">全部 <span>03</span></button>
+                <button class="filter" data-filter="commerce" role="tab" aria-selected="false">产品体验</button>
+                <button class="filter" data-filter="data" role="tab" aria-selected="false">数据系统</button>
+                <button class="filter" data-filter="product" role="tab" aria-selected="false">个人实验</button>
             </div>
             <div class="projects-grid" id="projects-grid">
                 <article class="project-card project-large reveal" data-category="commerce">

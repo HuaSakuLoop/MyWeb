@@ -1,11 +1,13 @@
 const state = { dark: localStorage.getItem('linye-theme') === 'dark' };
+const themeToggle = document.querySelector('.theme-toggle');
 
 const setTheme = () => {
     document.body.classList.toggle('dark', state.dark);
     document.querySelector('.sun-icon').textContent = state.dark ? '☾' : '☼';
+    themeToggle.setAttribute('aria-pressed', String(state.dark));
 };
 
-document.querySelector('.theme-toggle').addEventListener('click', () => {
+themeToggle.addEventListener('click', () => {
     state.dark = !state.dark;
     localStorage.setItem('linye-theme', state.dark ? 'dark' : 'light');
     setTheme();
@@ -23,8 +25,12 @@ document.querySelectorAll('.nav-links a').forEach(link => link.addEventListener(
 const filters = document.querySelectorAll('.filter');
 const projects = document.querySelectorAll('.project-card');
 filters.forEach(filter => filter.addEventListener('click', () => {
-    filters.forEach(item => item.classList.remove('active'));
+    filters.forEach(item => {
+        item.classList.remove('active');
+        item.setAttribute('aria-selected', 'false');
+    });
     filter.classList.add('active');
+    filter.setAttribute('aria-selected', 'true');
     const selected = filter.dataset.filter;
     projects.forEach(project => {
         const visible = selected === 'all' || project.dataset.category === selected;
