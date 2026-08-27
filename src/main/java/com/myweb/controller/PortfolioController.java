@@ -52,7 +52,7 @@ public class PortfolioController {
     @GetMapping("/timeline")
     public List<Map<String, String>> timeline() {
         return Arrays.asList(
-                event("2026 — 现在", "独立开发 · 杭州", "把时间花在真正重要的产品细节上。"),
+                event("2026 — 现在", "独立开发 · 武汉", "把时间花在真正重要的产品细节上，持续完成个人项目。"),
                 event("2026 — 现在", "后端工程师 · TCL格创东智", "参与集团生产系统平台的服务化建设及运维支持。"),
                 event("2021 — 2025", "开始写代码", "从一个 Spring Boot 接口开始，慢慢走到今天。")
         );
