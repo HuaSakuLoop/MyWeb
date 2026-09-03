@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="820" height="56" viewBox="0 0 820 56" preserveAspectRatio="none">
+  <defs>
+    <linearGradient id="bend-x" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="rgb(0 0 0)"/>
+      <stop offset="0.11" stop-color="rgb(128 0 0)"/>
+      <stop offset="0.89" stop-color="rgb(128 0 0)"/>
+      <stop offset="1" stop-color="rgb(255 0 0)"/>
+    </linearGradient>
+    <linearGradient id="bend-y" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="rgb(0 0 0)"/>
+      <stop offset="0.28" stop-color="rgb(0 128 0)"/>
+      <stop offset="0.72" stop-color="rgb(0 128 0)"/>
+      <stop offset="1" stop-color="rgb(0 255 0)"/>
+    </linearGradient>
+    <filter id="soften-map" x="-4%" y="-30%" width="108%" height="160%">
+      <feGaussianBlur stdDeviation="1.35"/>
+    </filter>
+  </defs>
+  <rect width="820" height="56" fill="#000"/>
+  <g filter="url(#soften-map)">
+    <rect width="820" height="56" fill="url(#bend-x)"/>
+    <rect width="820" height="56" fill="url(#bend-y)" style="mix-blend-mode:screen"/>
+  </g>
+</svg>
